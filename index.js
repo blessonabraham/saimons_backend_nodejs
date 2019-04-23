@@ -1,0 +1,38 @@
+const express = require('express');
+const mongoose = require('mongoose');
+
+const app = express();
+
+//Middleware
+app.use(express.json());
+
+//Global Functions
+global.GlobalErrorRespose = (content = "Sorry, We couldn't find that!") => {
+    return {"status": "error", "content": content};
+};
+
+//DB Connection
+const db = require('config').get('mongoURI');
+mongoose.connect(db, {
+    useNewUrlParser: true, useCreateIndex: true
+})
+    .then(() => console.log('Mongo Connected'))
+    .catch(err => {
+        console.log(err)
+    });
+
+
+//Main Routing
+app.use('/employee', require('./routes/EmployeeRoute'));
+
+
+// 404 Not Found
+app.use('/', (req, res) => {
+    res.status(404).json(GlobalErrorRespose())
+});
+
+//Server Starts
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+    console.log(`Server Started on port ${port}`)
+});
