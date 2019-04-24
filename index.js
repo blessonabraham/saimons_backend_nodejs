@@ -10,6 +10,9 @@ app.use(express.json());
 global.GlobalErrorRespose = (content = "Sorry, We couldn't find that!") => {
     return {"status": "error", "content": content};
 };
+global.GlobalSuccessRespose = (content = "That was a success") => {
+    return {"status": "success", "content": content};
+};
 
 //DB Connection
 const db = require('config').get('mongoURI');
@@ -24,6 +27,7 @@ mongoose.connect(db, {
 
 //Main Routing
 app.use('/employee', require('./routes/EmployeeRoute'));
+app.use('/test', require('./routes/TestRoute'));
 
 
 // 404 Not Found
