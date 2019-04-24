@@ -1,10 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
 const app = express();
+
 
 //Middleware
 app.use(express.json());
+
 
 //Global Functions
 global.GlobalErrorRespose = (content = "Sorry, We couldn't find that!") => {
@@ -13,6 +14,7 @@ global.GlobalErrorRespose = (content = "Sorry, We couldn't find that!") => {
 global.GlobalSuccessRespose = (content = "That was a success") => {
     return {"status": "success", "content": content};
 };
+
 
 //DB Connection
 const db = require('config').get('mongoURI');
@@ -34,6 +36,7 @@ app.use('/test', require('./routes/TestRoute'));
 app.use('/', (req, res) => {
     res.status(404).json(GlobalErrorRespose())
 });
+
 
 //Server Starts
 const port = process.env.PORT || 4000;
