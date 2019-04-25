@@ -6,7 +6,7 @@ let employee = require('../models/Employee');
 
 let router = express.Router();
 
-router.get('/', auth, (req, res) => {
+router.get('/list_all', auth, (req, res) => {
     employee.find().then((items => res.json(GlobalSuccessRespose(items))))
 });
 

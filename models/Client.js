@@ -52,12 +52,12 @@ let ClientSchema = new Schema({
         breaker: {
             type: Number,
             required: true,
-            enum: [400,450,650,750,1000,1400]
+            enum: [400, 450, 650, 750, 1000, 1400]
         },
         deal: {
             type: String,
             required: true,
-            enum: ['hot','cold']
+            enum: ['hot', 'cold']
         },
         followup_date: {
             type: Date,
@@ -68,7 +68,7 @@ let ClientSchema = new Schema({
         sales_filter: {
             type: String,
             required: true,
-            enum: ['margin_money_received','dd_received','advance_received','finance_tie_up','negotiation_stage','requirement_identified','breaker_delivered']
+            enum: ['margin_money_received', 'dd_received', 'advance_received', 'finance_tie_up', 'negotiation_stage', 'requirement_identified', 'breaker_delivered']
         },
     },
     {
