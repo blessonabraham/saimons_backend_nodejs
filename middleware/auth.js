@@ -5,7 +5,7 @@ function auth(req, res, next) {
     const token = req.header('x-auth-token');
     // Check for token
     if (!token)
-        return res.status(401).json(GlobalErrorRespose('No token, authorizaton denied'));
+        return res.status(401).json(GlobalErrorRespose('No token, authorization denied'));
     try {
         req.user = jwt.verify(token, config.get('jwtSecret'));
         next();

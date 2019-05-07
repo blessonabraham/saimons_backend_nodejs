@@ -1,7 +1,16 @@
 let express = require('express');
 let client = require('../models/Client');
+let auth = require('../middleware/auth');
 
 let router = express.Router();
+
+router.get('/get_my_clients_list', auth, (req, res) => {
+    client.find({employee_id: req.user.id}).then((items => res.json(GlobalSuccessRespose(items))))
+});
+
+router.get('/get_clients_list_hot', auth, (req, res) => {
+    client.find({employee_id: req.user.id, deal: 'hot'}).then((items => res.json(GlobalSuccessRespose(items))))
+});
 
 router.post('/add_new', (req, res) => {
     const {
