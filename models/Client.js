@@ -16,14 +16,12 @@ let ClientSchema = new Schema({
             required: true,
         },
         state: {
-            type: String,
+            type: Number,
             required: true,
-            enum: ["andaman & nicobar", "andhra pradesh", "arunachal pradesh", "assam", "bihar", "chandigarh", "chhattisgarh", "dadra & nagar haveli", "daman & diu", "delhi", "goa", "gujarat", "haryana", "himachal pradesh", "jammu & kashmir", "jharkhand", "karnataka", "kerala", "lakshadweep", "madhya pradesh", "maharashtra", "manipur", "meghalaya", "mizoram", "nagaland", "orissa", "pondicherry", "punjab", "rajasthan", "sikkim", "tamil nadu", "tripura", "uttar pradesh", "uttaranchal", "west bengal"]
         },
         district: {
-            type: String,
+            type: Number,
             required: true,
-            enum: ["adoor", "alappuzha", "attingal", "chalakudy", "changanassery", "cherthala", "chittur-thathamangalam", "guruvayoor", "kanhangad", "kannur", "kasaragod", "kayamkulam", "kochi", "kodungallur", "kollam", "kottayam", "kozhikode", "kunnamkulam", "malappuram", "mattannur", "mavelikkara", "mavoor", "muvattupuzha", "nedumangad", "neyyattinkara", "nilambur", "ottappalam", "palai", "palakkad", "panamattom", "panniyannur", "pappinisseri", "paravoor", "pathanamthitta", "peringathur", "perinthalmanna", "perumbavoor", "ponnani", "punalur", "puthuppally", "koyilandy", "shoranur", "taliparamba", "thiruvalla", "thiruvananthapuram", "thodupuzha", "thrissur", "tirur", "vaikom", "varkala", "vatakara"]
         },
         location: {
             type: String,
