@@ -23,8 +23,9 @@ let ClientSchema = new Schema({
             type: Number,
             required: true,
         },
-        location: {
-            type: String,
+        geolocation: {
+            type: [Number],
+            index: '2d',
             required: true,
         },
         address: {
