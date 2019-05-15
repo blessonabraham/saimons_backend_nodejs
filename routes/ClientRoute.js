@@ -10,6 +10,7 @@ router.get('/get_my_clients_list', auth, (req, res) => {
         .catch(err => res.json(GlobalErrorRespose(err.toString())));
 });
 
+
 router.get('/get_clients_list_hot', auth, (req, res) => {
     client.find({
         employee_id: req.user.id,
@@ -31,12 +32,36 @@ router.get('/get_clients_geo/:lat/:long', auth, (req, res) => {
 
 });
 
+router.post('/update_one', auth, (req, res) => {
+    const {
+        _id, name, mobile, state, district, geolocation, address, staff_name, staff_contact_number,
+        email_id, base_machine, breaker, deal, followup_date, comment, sales_filter
+    } = req.body;
+    client.updateOne({_id},{
+        name,
+        mobile,
+        state,
+        district,
+        geolocation,
+        address,
+        staff_name,
+        staff_contact_number,
+        email_id,
+        base_machine,
+        breaker,
+        deal,
+        followup_date,
+        comment,
+        sales_filter
+    },{ multi: false }).then(user => res.json(GlobalSuccessRespose(user)))
+        .catch(err => res.json(GlobalErrorRespose(err.toString())));
+});
+
 router.post('/add_new', (req, res) => {
     const {
         name, mobile, state, district, geolocation, address, staff_name, staff_contact_number,
         email_id, base_machine, breaker, deal, followup_date, comment, sales_filter
     } = req.body;
-
     const newClient = new client({
         employee_id: req.user.id,
         name,
