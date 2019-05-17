@@ -17,32 +17,25 @@ let ClientSchema = new Schema({
         },
         state: {
             type: Number,
-            required: true,
         },
         district: {
             type: Number,
-            required: true,
         },
         geolocation: {
             type: [Number],
             index: '2d',
-            required: true,
         },
         address: {
             type: String,
-            required: true,
         },
         staff_name: {
             type: String,
-            required: true,
         },
         staff_contact_number: {
             type: String,
-            required: true,
         },
         email_id: {
             type: String,
-            required: true,
         },
         base_machine: {
             type: String,

@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://admin:test123@cluster0-9sq8u.mongodb.net/test?retryWrites=true",
+  "mongoURI": "mongodb+srv://blessonline:mylord123@saimons-kq85d.mongodb.net/test?retryWrites=true",
   "jwtSecret": "HotStarSecret"
 }
