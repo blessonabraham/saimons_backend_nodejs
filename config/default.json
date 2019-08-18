@@ -1,4 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://blessonline:mylord123@saimons-kq85d.mongodb.net/test?retryWrites=true",
-  "jwtSecret": "HotStarSecret"
-}
